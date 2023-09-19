@@ -1,0 +1,18 @@
+﻿@page "/"
+@inherits DiariesPageComponentBase
+
+<MyAppBar>
+    <MTabs @bind-Value="tab"
+           ActiveClass="text-h6 font-weight-bold"
+           HideSlider>
+        <MTab Class="my-tab"
+              Ripple="false">
+            全部
+        </MTab>
+        <MTab Class="my-tab"
+              Ripple="false">
+            标签
+        </MTab>
+    </MTabs>
+</MyAppBar>
+
