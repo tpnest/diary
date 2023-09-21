@@ -8,7 +8,6 @@
             <MIcon>mdi-magnify</MIcon>
         </MButton>
     </MobileContent>
-
     <DesktopContent>
         <MTextField @bind-Value="SearchContent"
                     Class="rounded-pill second-background"
@@ -18,7 +17,7 @@
                     Dense="true"
                     HideDetails="@("auto")"
                     AppendIcon="mdi-magnify"
-                    OnAppendClick="@Search">
+                    OnAppendClick="Search">
         </MTextField>
     </DesktopContent>
 </MultiDisplay>

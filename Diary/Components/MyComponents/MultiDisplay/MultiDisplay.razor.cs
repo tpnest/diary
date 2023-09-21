@@ -9,9 +9,7 @@ public partial class MultiDisplay : IDisposable
 
     [Parameter] public RenderFragment? MobileContent { get; set; }
     [Parameter] public RenderFragment? DesktopContent { get; set; }
-
     [Parameter] public bool Tablet { get; set; }
-
     [Parameter] public EventCallback<bool> OnUpdate { get; set; }
 
     private bool Show;
@@ -32,7 +30,7 @@ public partial class MultiDisplay : IDisposable
     private async void InvokeStateHasChanged(object? sender, BreakpointChangedEventArgs e)
     {
         var show = Tablet ? MasaBlazor.Breakpoint.MdAndUp : MasaBlazor.Breakpoint.SmAndUp;
-        var update = Show != show;
+        bool update = Show != show;
         if (update)
         {
             if (OnUpdate.HasDelegate)

@@ -14,7 +14,27 @@
             标签
         </MTab>
     </MTabs>
-    
-    <MultiSearchControl OnSearch="Search" />
+
+    <MultiSearchControl OnSearch="Search">
+    </MultiSearchControl>
 </MyAppBar>
 
+<SwiperTabItems @bind-Value="tab">
+    <SwiperTabItem>
+        <div class="pl-2">
+
+            <div class="text--secondary mb-2">
+                @(DateTime.Now.ToString("yyyy/MM/dd"))
+            </div>
+
+            <div class="text-h6 mb-5">
+                具有最大化状态的窗口会扩展到它能具有的最大大小
+            </div>
+
+
+        </div>
+    </SwiperTabItem>
+    <SwiperTabItem>
+        <div>hhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+    </SwiperTabItem>
+</SwiperTabItems>

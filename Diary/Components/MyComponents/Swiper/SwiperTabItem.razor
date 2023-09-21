@@ -1,0 +1,10 @@
+﻿@namespace Diary.Components
+
+<div @ref="Ref" id="@Id" class="swiper-slide">
+    <MContainer Class="my-container"
+                Fluid="true">
+        <CascadingValue Value="Ref" Name="ScrollElement">
+            @ChildContent
+        </CascadingValue>
+    </MContainer>
+</div>

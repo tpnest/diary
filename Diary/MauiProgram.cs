@@ -14,14 +14,14 @@ public static class MauiProgram
             .ConfigureFonts(fonts => { fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular"); });
 
         builder.Services.AddMauiBlazorWebView();
-        builder.Services.AddMasaBlazor();
+        
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();
         builder.Logging.AddDebug();
 #endif
 
         builder.Services.AddSingleton<WeatherForecastService>();
-
+        builder.Services.AddMasaBlazorConfig();
         builder.Services.AddCustomIOC();
         return builder.Build();
     }
