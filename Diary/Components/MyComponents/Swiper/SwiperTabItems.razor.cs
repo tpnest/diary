@@ -54,7 +54,7 @@ public partial class SwiperTabItems : IAsyncDisposable
             Show = true;
             await InvokeAsync(StateHasChanged);
         }
-    }
+    } 
 
     private void SetValue(StringNumber value)
     {
