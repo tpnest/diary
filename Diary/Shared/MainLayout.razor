@@ -4,9 +4,9 @@
     <ErrorBoundary>
         <ChildContent>
             @* <FirstLaunchDialog /> *@
-            @* <MainNavigationDrawer @bind-Value="SelectedItemIndex" *@
-            @*                       Items="NavigationButtons"> *@
-            @* </MainNavigationDrawer> *@
+            <MainNavigationDrawer @bind-Value="SelectedItemIndex"
+                                  Items="NavigationButtons">
+            </MainNavigationDrawer>
             <MMain>
                 <CascadingValue Value="@this">
                     @Body
@@ -21,3 +21,4 @@
         </ErrorContent>
     </ErrorBoundary>
 </MApp>
+

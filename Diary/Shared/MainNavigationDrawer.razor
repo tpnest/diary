@@ -1,13 +1,39 @@
-﻿
+﻿@inherits MainNavigationCompontentBase
+
 <MNavigationDrawer App="true"
                    Floating="true"
                    Value="Show"
                    Stateless="true"
                    Width="300"
-                   >
-    
+                   MiniVariant="MiniVariant"
+                   Style="max-height:unset;transition: width ease 0.2s;">
+    <MList Shaped="true"
+           Flat="true">
+        <MListItemGroup Value="Value"
+                        ValueChanged="ValueChanged"
+                        Mandatory="true"
+                        ActiveClass="@(MiniVariant ? "" : "my-navigation-drawer-active")">
+            @foreach (var (item,i) in Items.Select((v, i) => (v,i)))
+            {
+                var activated = Value == i;
+                <MListItem Ripple="false"
+                           OnClick="item.OnClick">
+                    <MListItemIcon>
+                        <MIcon Size="24">
+                            @(activated ? item.SelectedIcon : item.Icon)
+                        </MIcon>
+                    </MListItemIcon>
+                    <MListItemTitle Class="@(activated ? "text-h6 font-weight-bold" : "")">
+                        <!--TODO I18n-->
+                        @item.Text
+                    </MListItemTitle>
+                </MListItem>
+            }
+        </MListItemGroup>
+    </MList>
 </MNavigationDrawer>
 
 @code {
-    
+    private bool Show => MasaBlazor.Breakpoint.SmAndUp;
+    private bool MiniVariant => MasaBlazor.Breakpoint.Sm;
 }
